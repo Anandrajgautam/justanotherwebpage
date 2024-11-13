@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism in India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #161813;
+            overflow-x: hidden;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, p, a {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            width: 100%;
+            padding: 20px 10vw;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .navbar.bg {
+            background: rgba(22, 24, 19, 0.8);
+        }
+
+        .navbar.shrink {
+            padding: 0px 20vw;
+        }
+
+        .links-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .logo {
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        .link-item {
+            margin: 0 20px;
+            transition: 0.5s;
+        }
+
+        .link-item a {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px;
+        }
+
+        .link-item:hover {
+            transform: scale(1.2);
+        }
+
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-section-title {
+            font-size: 80px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-section-title:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-section-sub-heading {
+            font-size: 24px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .scroll-down-icon {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            animation: down ease 1s infinite;
+        }
+
+        @keyframes down {
+            from { bottom: 10%; }
+            to { bottom: 8%; }
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .explore-section {
+            position: relative;
+            height: 80vh;
+            padding: 80px 10vw;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .explore-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.5;
+            border-radius: 20px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-para {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .monument {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .monument img {
+            width: 200px;
+ height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .monument:hover img {
+            transform: scale(1.1);
+        }
+
+        .hover-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .monument:hover .hover-text {
+            opacity: 1;
+        }
+
+        .monument:hover {
+            transform: scale(1.2);
+            z-index: 1;
+        }
+
+        .monument:not(:hover) {
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar" id="navbar">
+        <ul class="links-container">
+            <li class="link-item"><a href="#travel">Travel</a></li>
+            <li class="link-item"><a href="#explore-section">Explore</a></li>
+            <li class="link-item"><a href="#hero-section"><img src="img/logo.png" class="logo" alt="Logo"></a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="hero-section" id="hero-section">
+    <div class="background">
+        <img src="img/img1.jpg" class="background-image" alt="Hero Image" id="heroImage">
+    </div>
+    <div class="hero-section-content">
+        <h1 class="hero-section-title" id="title">Wonderful Experience</h1>
+        <p class="hero-section-sub-heading" id="subtitle">Red Fort: A UNESCO World Heritage Site, known for its stunning architecture.</p>
+    </div>
+    <img src="img/down-arrow.png" class="scroll-down-icon" alt="scroll down indicator">
+</main>
+
+<section class="explore-section" id="explore-section">
+    <video class="explore-video" autoplay loop muted>
+        <source src="mp4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h1 class="section-title">Explore the World</h1>
+    <p class="section-para">Experience the rich culture and history of India.</p>
+    <div class="monument">
+        <img src="img1.jpg" alt="Red Fort">
+        <div class="hover-text">Package: Explore the Red Fort with a guided tour.</div>
+    </div>
+    <div class="monument">
+        <img src="img2.jpg" alt="Taj Mahal">
+        <div class="hover-text">Package: Visit the Taj Mahal with a sunset view.</div>
+    </div>
+    <div class="monument">
+        <img src="img3.jpg" alt="Rani Ki Vav">
+        <div class="hover-text">Package: Discover the history of Rani Ki Vav.</div>
+    </div>
+    <div class="monument">
+        <img src="img4.jpg" alt="Lotus Temple">
+        <div class="hover-text">Package: Experience tranquility at the Lotus Temple.</div>
+    </div>
+    <div class="monument">
+        <img src="img5.jpg" alt="Hawa Mahal">
+        <div class="hover-text">Package: Explore the architectural beauty of Hawa Mahal.</div>
+    </div>
+    <div class="monument">
+        <img src="img6.jpg" alt="Konark Sun Temple">
+        <div class="hover-text">Package: Visit the stunning Konark Sun Temple.</div>
+    </div>
+</section>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    const heroImage = document.getElementById('heroImage');
+    const title = document.getElementById('title');
+    const subtitle = document.getElementById('subtitle');
+
+    const heroImages = [
+        {src: "img1.jpg", title: "Wonderful Experience", subtitle: "Red Fort: A UNESCO World Heritage Site, known for its stunning architecture."},
+        {src: "img2.jpg", title: "Marvel at the Taj Mahal", subtitle: "A symbol of love and a magnificent piece of architecture."},
+        {src: "img3.jpg", title: "Explore Rani Ki Vav", subtitle: "An ancient step-well with incredible carvings."},
+        {src: "img4.jpg", title: "Peace at Lotus Temple", subtitle: "A beautiful Bahá'í House of Worship in Delhi."},
+        {src: "img5.jpg", title: "Discover Hawa Mahal", subtitle: "An iconic palace with an intricate design."},
+        {src: "img6.jpg", title: "Visit Konark Sun Temple", subtitle: "An ancient temple known for its stunning architectural design."}
+    ];
+
+    let currentImageIndex = 0;
+
+    function changeHeroImage() {
+        heroImage.style.opacity = '0';
+        setTimeout(() => {
+            heroImage.src = heroImages[currentImageIndex].src;
+            title.textContent = heroImages[currentImageIndex].title;
+            subtitle.textContent = heroImages[currentImageIndex].subtitle;
+            heroImage.style.opacity = '1';
+
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+        }, 1000);
+    }
+
+    setInterval(changeHeroImage, 5000);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('bg');
+            navbar.classList.add('shrink');
+        } else {
+            navbar.classList.remove('bg');
+            navbar.classList.remove('shrink');
+        }
+    });
+</script>
+
+</body>
+</html>
